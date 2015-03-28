@@ -1,0 +1,324 @@
+@richblue: rgb(84, 180, 235);
+@darkblue: rgb(37, 93, 192);
+@grey: #999;
+@font-face {
+	font-family: 'mksd';
+	src: url('fonts/078mksd_mc-webfont.eot');
+	src: url('fonts/078mksd_mc-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/078mksd_mc-webfont.woff2') format('woff2'),
+		 url('fonts/078mksd_mc-webfont.woff') format('woff'),
+		 url('fonts/078mksd_mc-webfont.ttf') format('truetype'),
+		 url('fonts/078mksd_mc-webfont.svg#078mksdmediumcondensedregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+*{
+	outline: none;
+}
+.overflowy{
+	overflow-y: scroll;
+}
+.greet{
+	position: absolute;
+	height: 400px;
+	width: 450px;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	color: darken(@grey, 30%);
+	text-shadow: 0px 1px 1px black;
+}
+.note{
+	width: 90%;
+	height: 100px;
+	text-align: center;
+	color: darken(@grey, 30%);
+	text-shadow: 0px 1px 1px black;
+	margin-bottom: -60px;
+	margin-top: 10px;
+	.order{
+		border-bottom: 2px dotted darken(@grey, 30%);
+		cursor: pointer;
+	}
+	select{
+		padding-left: 1px;
+		font-size: 1em;
+		font-family: 'mksd';
+		font-weight: bold;
+		color: darken(@grey, 30%);
+		background-color: transparent;
+		text-shadow: 0px 1px 1px black;
+		border-width: 0px 0px 2px 0px;
+		border-style: dotted;
+		border-color: darken(@grey, 30%);
+	}
+}
+h1{
+	font-size: 3em;
+}
+h2{
+	font-size: 2.5em;
+}
+h3{
+	font-size: 2em;
+}
+h5{
+	font-size: 1.5em;
+}
+body{
+	background-image: url('img/bg.jpg');
+	font-family: 'mksd';
+	font-weight: bold;
+	font-size: 1.4em;
+}
+#header{
+	height: 10%;
+	min-height: 60px;
+	width: 100%;
+	background-color: @richblue;
+	color: white;
+	box-shadow: 0px 0px 2px 1px grey;
+	position: fixed;
+	z-index: 9;
+	a{
+		line-height: 60px;
+		vertical-align: middle;
+		margin-left: 50px;
+		padding-left: 40px;
+		font-size: 1.8em;
+		text-shadow: 0px 1px 1px black;
+	}
+}
+#sidebar{
+	overflow: auto;
+	position: absolute;
+	left: -280px;
+	top: 0px;
+	height: 100%;
+	width: 350px;
+	background-color: @darkblue;
+	transition: all 0.5s;
+	box-shadow: 0px 0px 3px 1px darken(grey, 20%);
+	position: fixed;
+	z-index: 9;
+	&:hover{
+		left: 0px;
+	}
+	li{
+		transition: all 0.2s;
+	}
+	li{
+		width: 100%;
+		&:nth-child(n+1){
+			border-style: solid;
+			border-width: 1px 0px 1px 0px;
+			border-top-color: @richblue;
+			border-bottom-color: darken(@richblue,50%);
+		}
+		&:hover{
+			background-color: darken(@darkblue, 30%);
+		}
+	}
+	.search{
+		height: 60px;
+		width: 100%;
+		input{
+			height: 80%;
+			width: 72%;
+			margin: 5px;
+			margin-left: 10px;
+			vertical-align: middle;
+			border-radius: 3px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: darken(@darkblue, 30%);
+			font-family: 'mksd';
+			font-weight: bold;
+			font-size: 1.4em;
+		}
+		button{
+			height: 50px;
+			width: 50px;
+			margin: 5px;
+			margin-right: 10px;
+			vertical-align: middle;
+			background-color: transparent;
+			border-style: none;
+			cursor: pointer;
+			background-image: url('img/search.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			float: right;
+		}
+	}
+	a{
+		font-size: 1.4em;
+		color: white;
+		line-height: 60px;
+		padding-left: 15px;
+		cursor: pointer;
+		display: block;
+		text-shadow: 0px 1px 1px black;
+		&#pagetitle{
+			font-size: 2.2em;
+			background-image: url('img/studb.png');
+			line-height: 160px;
+			background-size: 100px;
+			background-position: 90% 50%;
+			background-repeat: no-repeat;
+		}
+		&#schoollist{
+			background-image: url('img/school.png');
+			background-size: 50px;
+			background-position: 97% 50%;
+			background-repeat: no-repeat;
+		}
+		&#streamlist{
+			background-image: url('img/stream.png');
+			background-size: 50px;
+			background-position: 97% 50%;
+			background-repeat: no-repeat;
+		}
+		&#collegelist{
+			background-image: url('img/college.png');
+			background-size: 50px;
+			background-position: 97% 50%;
+			background-repeat: no-repeat;
+		}
+		&#locationlist{
+			background-image: url('img/location.png');
+			background-size: 50px;
+			background-position: 97% 50%;
+			background-repeat: no-repeat;
+		}
+		&#visitorstats{
+			background-image: url('img/visitor.png');
+			background-size: 50px;
+			background-position: 97% 50%;
+			background-repeat: no-repeat;
+		}
+	}
+	.nav > li:hover{
+		border-top-color: darken(@darkblue, 30%);
+	}
+	.nav > li > ul{
+		display: none;
+		font-size: 0.6em;
+		> li{
+			a{
+				margin-left: 5px;
+				line-height: 40px;
+			}
+			&:hover{
+				background-color: @darkblue;
+			}
+		}
+	}
+}
+#footer{
+	position: fixed;
+	bottom: 0px;
+	height: 50px;
+	width: 100%;
+	background-color: white;
+	box-shadow: 0px 0px 2px grey;
+	text-align: center;
+	vertical-align: middle;
+	a{
+		line-height: 50px;
+		text-shadow: 0px 1px 1px black;
+	}
+}
+#container{
+	margin-left: 80px;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	text-align: center;
+	overflow-x: hidden;
+}
+.itemgrid{
+	height: 400px;
+	width: 300px;
+	background-color: #ddd;
+	box-shadow: 0px 10px 6px grey;
+	margin: 10px;
+	display: inline-block;
+	overflow: hidden;
+	.info{
+		a{
+			&:nth-child(n){
+				position: relative;
+				top: 10px;
+			}
+			&:nth-child(1){
+				color: darken(@grey, 30%);
+				font-size: 1.5em;
+			}
+			line-height: 1.2em;
+		}
+	}
+	img:hover{
+		height: 210px;
+		margin-left: -7px;
+		margin-top: -5px;
+	}
+	br{
+		display: block;
+	}
+	span{
+		display: none;
+	}
+}
+.itemlist{
+	min-height: 80px;
+	width: 80%;
+	background-color: #ddd;
+	box-shadow: 0px 10px 6px grey;
+	margin: 10px;
+	display: inline-block;
+	overflow: hidden;
+	text-align: left;
+	.info{
+		a{
+			&:nth-child(n){
+				position: relative;
+				top: 10px;
+			}
+			&:nth-child(1){
+				color: darken(@grey, 30%);
+				font-size: 1.5em;
+			}
+			line-height: 1.2em;
+		}
+		padding-bottom: 20px;
+	}
+	img{
+		height: 80px;
+		width: 120px;
+		float: left;
+	}
+	span{
+		display: inline;
+	}
+	br{
+		display: none;
+	}
+}
+.toggleview{
+	height: 40px;
+	width: 40px;
+	position: fixed;
+	top: 5px;
+	right: 10px;
+	margin: auto;
+	background-image: url('img/grid.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	z-index: 10;
+}
